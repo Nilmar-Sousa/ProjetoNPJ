@@ -3,6 +3,7 @@ package view;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import modeloConection.ConexaoBD;
+import static modeloConection.ConexaoBD.con;
 
 /**
  *
@@ -15,6 +16,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     FichaCadastroClientes telaCliente = new FichaCadastroClientes();
     Acompanhamento telaAcompanhamento = new Acompanhamento();
     Relatorio telaRelatorioAcomp = new Relatorio();
+    TelaAssistidos telaAssistidos = new TelaAssistidos();
 
     public TelaPrincipal(String usuario) {
         initComponents();
@@ -38,6 +40,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabelUsuario = new javax.swing.JLabel();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jLabelFundoTelaPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
@@ -46,6 +49,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuAcompanhamento = new javax.swing.JMenu();
         jMenuItemAcompanhar = new javax.swing.JMenuItem();
         jMenuItemRelatorios = new javax.swing.JMenuItem();
+        jMenu_Pesquisa = new javax.swing.JMenu();
+        jMenuItem_Consultar_Assistido = new javax.swing.JMenuItem();
+        jMenuItem_Consultar_Aluno = new javax.swing.JMenuItem();
         jMenuSair = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
@@ -53,6 +59,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel1.setText("<html><b>USUÁRIO:");
 
         jLabelUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -96,7 +104,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuAcompanhamento.add(jMenuItemAcompanhar);
 
         jMenuItemRelatorios.setText("RELATÓRIO DE ACOMPANHAMENTO");
-        jMenuItemRelatorios.setActionCommand("RELATÓRIO DE ACOMPANHAMENTO");
         jMenuItemRelatorios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemRelatoriosActionPerformed(evt);
@@ -105,6 +112,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuAcompanhamento.add(jMenuItemRelatorios);
 
         jMenuBar1.add(jMenuAcompanhamento);
+
+        jMenu_Pesquisa.setText("<html>\n<b>\nPESQUISA");
+
+        jMenuItem_Consultar_Assistido.setText("CONSULTAR ASSISTIDO");
+        jMenuItem_Consultar_Assistido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_Consultar_AssistidoActionPerformed(evt);
+            }
+        });
+        jMenu_Pesquisa.add(jMenuItem_Consultar_Assistido);
+
+        jMenuItem_Consultar_Aluno.setText(" CONSULTAR ALUNO");
+        jMenuItem_Consultar_Aluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_Consultar_AlunoActionPerformed(evt);
+            }
+        });
+        jMenu_Pesquisa.add(jMenuItem_Consultar_Aluno);
+
+        jMenuBar1.add(jMenu_Pesquisa);
 
         jMenuSair.setText("<html><b>SAIR");
 
@@ -186,6 +213,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaRelatorioAcomp.setVisible(true);
     }//GEN-LAST:event_jMenuItemRelatoriosActionPerformed
 
+    // BOTÃO PARA CONSULTAR ASSISTIDO
+    private void jMenuItem_Consultar_AssistidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_Consultar_AssistidoActionPerformed
+        String cpf = JOptionPane.showInputDialog("Insira o CPF do Cliente: ");
+    }//GEN-LAST:event_jMenuItem_Consultar_AssistidoActionPerformed
+
+    // BOTÃO PARA CONSULTAR ALUNO
+    private void jMenuItem_Consultar_AlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_Consultar_AlunoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem_Consultar_AlunoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -228,11 +265,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuAcompanhamento;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemAcompanhar;
     private javax.swing.JMenuItem jMenuItemClientes;
     private javax.swing.JMenuItem jMenuItemRelatorios;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenuItem jMenuItemUsuarios;
+    private javax.swing.JMenuItem jMenuItem_Consultar_Aluno;
+    private javax.swing.JMenuItem jMenuItem_Consultar_Assistido;
     private javax.swing.JMenu jMenuSair;
+    private javax.swing.JMenu jMenu_Pesquisa;
     // End of variables declaration//GEN-END:variables
 }
