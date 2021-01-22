@@ -18,6 +18,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     Relatorio telaRelatorioAcomp = new Relatorio();
     TelaAssistidos telaAssistidos = new TelaAssistidos();
     TelaPesquisa telaPesquisa = new TelaPesquisa();
+    FichaCadastroAluno telaAluno = new FichaCadastroAluno();
+    FichaCadastroProfessor telaProfessor = new FichaCadastroProfessor();
+    FichaCadastroPasta telaPasta = new FichaCadastroPasta();
 
     public TelaPrincipal(String usuario) {
         initComponents();
@@ -46,13 +49,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelFundoTelaPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItemClientes = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem_aluno = new javax.swing.JMenuItem();
+        jMenuItemAssistidos = new javax.swing.JMenuItem();
+        jMenuItem_Professor = new javax.swing.JMenuItem();
         jMenuItemUsuarios = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu_NovaPasta = new javax.swing.JMenu();
+        jMenuItemNovaPasta = new javax.swing.JMenuItem();
+        jMenuItemConsultarPasta = new javax.swing.JMenuItem();
         jMenuAcompanhamento = new javax.swing.JMenu();
         jMenuItemAcompanhar = new javax.swing.JMenuItem();
         jMenuItemRelatorios = new javax.swing.JMenuItem();
@@ -85,24 +88,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuCadastro.setText("<html><b>CADASTRO");
 
-        jMenuItem2.setText("ALUNO(A)");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem_aluno.setText("ALUNO(A)");
+        jMenuItem_aluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jMenuItem_alunoActionPerformed(evt);
             }
         });
-        jMenuCadastro.add(jMenuItem2);
+        jMenuCadastro.add(jMenuItem_aluno);
 
-        jMenuItemClientes.setText("ASSISTIDOS");
-        jMenuItemClientes.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemAssistidos.setText("ASSISTIDOS");
+        jMenuItemAssistidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemClientesActionPerformed(evt);
+                jMenuItemAssistidosActionPerformed(evt);
             }
         });
-        jMenuCadastro.add(jMenuItemClientes);
+        jMenuCadastro.add(jMenuItemAssistidos);
 
-        jMenuItem4.setText("PROFESSOR(A)");
-        jMenuCadastro.add(jMenuItem4);
+        jMenuItem_Professor.setText("PROFESSOR(A)");
+        jMenuItem_Professor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_ProfessorActionPerformed(evt);
+            }
+        });
+        jMenuCadastro.add(jMenuItem_Professor);
 
         jMenuItemUsuarios.setText("USUÁRIOS");
         jMenuItemUsuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -114,15 +122,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuCadastro);
 
-        jMenu1.setText("PASTAS");
+        jMenu_NovaPasta.setText("PASTAS");
 
-        jMenuItem5.setText("NOVA PASTA");
-        jMenu1.add(jMenuItem5);
+        jMenuItemNovaPasta.setText("NOVA PASTA");
+        jMenuItemNovaPasta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemNovaPastaActionPerformed(evt);
+            }
+        });
+        jMenu_NovaPasta.add(jMenuItemNovaPasta);
 
-        jMenuItem7.setText("CONSULTAR PASTA");
-        jMenu1.add(jMenuItem7);
+        jMenuItemConsultarPasta.setText("CONSULTAR PASTA");
+        jMenu_NovaPasta.add(jMenuItemConsultarPasta);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenu_NovaPasta);
 
         jMenuAcompanhamento.setText("<html><b>DIÁRIO DE ATENDIMENTO");
 
@@ -177,7 +190,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
      
     //  AÇÃO AO CLICAR NO BOTÃO DE CADASTAR CLIENTES
-    private void jMenuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClientesActionPerformed
+    private void jMenuItemAssistidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAssistidosActionPerformed
       /*  try {
             conecta.executasql("select *from usuarios where nome_usuario='"+jLabelUsuario.getText()+"'");
             conecta.rs.first();
@@ -190,7 +203,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Você não tem permissão para realizar esta operação!");
         }*/
         telaCliente.setVisible(true);
-    }//GEN-LAST:event_jMenuItemClientesActionPerformed
+    }//GEN-LAST:event_jMenuItemAssistidosActionPerformed
 
     
     // AÇÃO DO BOTÃO DE CADASTRAR USUÁRIOS
@@ -237,9 +250,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaRelatorioAcomp.setVisible(true);
     }//GEN-LAST:event_jMenuItemRelatoriosActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    // ABRIR TELA DE CADASTRO DE ALUNOS
+    private void jMenuItem_alunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_alunoActionPerformed
+        telaAluno.setVisible(true);
+    }//GEN-LAST:event_jMenuItem_alunoActionPerformed
+
+    // ABRIR TELA DE CADASTRO DE PROFESSORES
+    private void jMenuItem_ProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_ProfessorActionPerformed
+        telaProfessor.setVisible(true);
+    }//GEN-LAST:event_jMenuItem_ProfessorActionPerformed
+
+    // ABRIR TELA DE CADASTRO DE PASTA
+    private void jMenuItemNovaPastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNovaPastaActionPerformed
+        telaPasta.setVisible(true);
+    }//GEN-LAST:event_jMenuItemNovaPastaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,25 +304,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelFundoTelaPrincipal;
     private javax.swing.JLabel jLabelUsuario;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuAcompanhamento;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuItem jMenuItemAcompanhar;
-    private javax.swing.JMenuItem jMenuItemClientes;
+    private javax.swing.JMenuItem jMenuItemAssistidos;
+    private javax.swing.JMenuItem jMenuItemConsultarPasta;
+    private javax.swing.JMenuItem jMenuItemNovaPasta;
     private javax.swing.JMenuItem jMenuItemRelatorios;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenuItem jMenuItemUsuarios;
+    private javax.swing.JMenuItem jMenuItem_Professor;
+    private javax.swing.JMenuItem jMenuItem_aluno;
     private javax.swing.JMenu jMenuSair;
+    private javax.swing.JMenu jMenu_NovaPasta;
     private javax.swing.JMenu jMenu_Pesquisa;
     // End of variables declaration//GEN-END:variables
 }

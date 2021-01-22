@@ -9,7 +9,7 @@ public class ConexaoBD {
    public Statement stm;
    public ResultSet rs;
    private static String driver = "org.postgresql.Driver"; // PADRÃO POSTGREE
-   private static String caminho = "jdbc:postgresql://127.0.0.1/ProjetoNPJ"; // DEFINIR CAMINHO DO BANCO DE DADOS 
+   private static String caminho = "jdbc:postgresql://localhost:5432/ProjetoNPJ"; // DEFINIR CAMINHO DO BANCO DE DADOS 
    private static final String usuario = "postgres"; // USUARIO PADRÃO DO BANCO DE DADOS
    private static final String senha = "Vai5a3eR";   // SENHA DO BANCO DE DADOS
    public static Connection con;
