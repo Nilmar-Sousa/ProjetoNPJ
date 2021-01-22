@@ -75,7 +75,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu_NovaPasta">
           <Properties>
-            <Property name="text" type="java.lang.String" value="PASTAS"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;b&gt;&#xa;PASTAS"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemNovaPasta">

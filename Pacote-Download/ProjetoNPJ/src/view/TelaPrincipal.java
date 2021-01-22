@@ -122,7 +122,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuCadastro);
 
-        jMenu_NovaPasta.setText("PASTAS");
+        jMenu_NovaPasta.setText("<html>\n<b>\nPASTAS");
 
         jMenuItemNovaPasta.setText("NOVA PASTA");
         jMenuItemNovaPasta.addActionListener(new java.awt.event.ActionListener() {
