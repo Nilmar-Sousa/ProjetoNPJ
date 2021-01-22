@@ -600,10 +600,10 @@ public class FichaCadastroClientes extends javax.swing.JFrame {
                     .addComponent(jButtonExcluir)
                     .addComponent(jButtonCancelar)
                     .addComponent(jButtonImprimir))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(1005, 579));
+        setSize(new java.awt.Dimension(1005, 605));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1057,7 +1057,7 @@ public class FichaCadastroClientes extends javax.swing.JFrame {
     // AÇÃO DO BOTÃO BUSCAR
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         mod.setPesquisa(jFormattedTextFieldPesquisa.getText());
-        BeansClientes model = dao.busca_medico(mod);
+        BeansClientes model = dao.busca_clientes(mod);
         jTextFieldIdCliente.setText(String.valueOf(model.getId_Cliente()));
         jTextFieldNome.setText(model.getNome_Cliente());
         jTextFieldEstadoCivil.setText(model.getEstadoCivil_Cliente());

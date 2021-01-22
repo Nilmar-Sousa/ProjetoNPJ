@@ -96,7 +96,7 @@ public class DaoClientes {
     }
     
         // METÓDO PARA BUSCAR DADOS NO BANCO DE DADOS
-        public BeansClientes busca_medico(BeansClientes mod){
+        public BeansClientes busca_clientes(BeansClientes mod){
             conex.getConnection();
             conex.executasql("select *from clientes where cpf_cliente like'%"+mod.getPesquisa()+"%'");
         try {

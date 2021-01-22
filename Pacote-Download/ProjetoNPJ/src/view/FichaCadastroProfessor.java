@@ -5,12 +5,23 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+import modelBeans.BeansProfessores;
+import modeloConection.ConexaoBD;
+import modeloDao.DAOProfessor;
+
 /**
  *
  * @author Nilmar
  */
 public class FichaCadastroProfessor extends javax.swing.JFrame {
 
+    BeansProfessores mod = new BeansProfessores();
+    ConexaoBD conex = new ConexaoBD();
+    DAOProfessor dao = new DAOProfessor();
+    int flag=0;
+    
+    
     /**
      * Creates new form FichaCadastroProfessor
      */
@@ -27,23 +38,333 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelCadastrodeAlunos = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelNome = new javax.swing.JLabel();
+        jTextFieldNome = new javax.swing.JTextField();
+        jLabelCPF = new javax.swing.JLabel();
+        jFormattedTextFieldCPF = new javax.swing.JFormattedTextField();
+        jLabelTelefone = new javax.swing.JLabel();
+        jFormattedTextFieldTelefone = new javax.swing.JFormattedTextField();
+        jLabelRespEndereco = new javax.swing.JLabel();
+        jTextFieldEndereco = new javax.swing.JTextField();
+        jLabelRespBairro = new javax.swing.JLabel();
+        jTextFieldBairro = new javax.swing.JTextField();
+        jLabelRespEstado = new javax.swing.JLabel();
+        jTextFieldEstado = new javax.swing.JTextField();
+        jLabelRespCidade = new javax.swing.JLabel();
+        jTextFieldCidade = new javax.swing.JTextField();
+        jLabelRespNumeroCasa = new javax.swing.JLabel();
+        jFormattedTextFieldNumeroCasa = new javax.swing.JFormattedTextField();
+        jFormattedTextField_Pesquisa = new javax.swing.JFormattedTextField();
+        jButton2 = new javax.swing.JButton();
+        jButtonSalvar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+
+        jLabelCadastrodeAlunos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelCadastrodeAlunos.setText("CADASTRO DE PROFESSORES");
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabelNome.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelNome.setText("Nome");
+
+        jTextFieldNome.setEnabled(false);
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomeActionPerformed(evt);
+            }
+        });
+
+        jLabelCPF.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelCPF.setText("CPF");
+
+        try {
+            jFormattedTextFieldCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextFieldCPF.setEnabled(false);
+
+        jLabelTelefone.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelTelefone.setText("Telefone");
+
+        try {
+            jFormattedTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextFieldTelefone.setEnabled(false);
+
+        jLabelRespEndereco.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelRespEndereco.setText("Endereço");
+
+        jTextFieldEndereco.setEnabled(false);
+
+        jLabelRespBairro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelRespBairro.setText("Bairro");
+
+        jTextFieldBairro.setEnabled(false);
+
+        jLabelRespEstado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelRespEstado.setText("Estado");
+
+        jTextFieldEstado.setEnabled(false);
+
+        jLabelRespCidade.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelRespCidade.setText("Cidade");
+
+        jTextFieldCidade.setEnabled(false);
+        jTextFieldCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCidadeActionPerformed(evt);
+            }
+        });
+
+        jLabelRespNumeroCasa.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabelRespNumeroCasa.setText("Nº da Casa");
+
+        jFormattedTextFieldNumeroCasa.setEnabled(false);
+
+        try {
+            jFormattedTextField_Pesquisa.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jButton2.setText("Pesquisar");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelRespEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                    .addComponent(jLabelRespEstado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldEndereco)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(jLabelCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabelRespBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabelTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(12, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTextFieldEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabelRespCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelRespNumeroCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextFieldNumeroCasa)
+                        .addGap(66, 66, 66))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelRespEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelRespBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelRespEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelRespCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelRespNumeroCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFormattedTextFieldNumeroCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        jButtonSalvar.setText("Salvar");
+        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelar.setText("Cancelar");
+
+        jButton1.setText("Novo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 920, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(322, 322, 322)
+                        .addComponent(jLabelCadastrodeAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelCadastrodeAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButtonSalvar)
+                    .addComponent(jButtonCancelar))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
+
+    private void jTextFieldCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCidadeActionPerformed
+
+    // AÇÃO DO BOTÃO SALVAR PROFESSOR
+    private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
+        if(jTextFieldNome.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha o campo nome para continuar");
+            jTextFieldNome.requestFocus();
+        }else if(jFormattedTextFieldCPF.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha o campo estado civil para continuar");
+            jFormattedTextFieldCPF.requestFocus();
+        }else if(jFormattedTextFieldTelefone.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha o campo telefone para continuar");
+        }else if(jTextFieldEndereco.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha o campo endereço para continuar");
+        }else if(jTextFieldEstado.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha o campo estado para continuar");
+        }else if(jTextFieldCidade.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha o campo cidade para continuar");
+        }else if(jTextFieldBairro.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Preencha o campo bairro para continuar");
+        }else{
+        if(flag == 1){
+            mod.setNome_Professor(jTextFieldNome.getText());
+            mod.setCpf_Professor(jFormattedTextFieldCPF.getText());
+            mod.setTelefone_Professor(jFormattedTextFieldTelefone.getText());
+            mod.setEndereco_Professor(jTextFieldEndereco.getText());
+            mod.setBairro_Professor(jTextFieldBairro.getText());
+            mod.setEstado_Professor(jTextFieldEstado.getText());
+            mod.setCidade_Professor(jTextFieldCidade.getText());
+            mod.setNumerocasa_Professor(jFormattedTextFieldNumeroCasa.getText());
+            dao.salvar(mod);
+            
+            jTextFieldNome.setText("");
+            jFormattedTextFieldCPF.setText("");
+            jFormattedTextFieldTelefone.setText("");
+            jTextFieldEndereco.setText("");
+            jTextFieldBairro.setText("");
+            jTextFieldBairro.setText("");
+            jTextFieldCidade.setText("");
+            jFormattedTextFieldNumeroCasa.setText("");
+            
+            jTextFieldNome.setEnabled(!true);
+            jFormattedTextFieldCPF.setEnabled(!true);
+            jFormattedTextFieldTelefone.setEnabled(!true);
+            jTextFieldEndereco.setEnabled(!true);
+            jTextFieldBairro.setEnabled(!true);
+            jTextFieldEstado.setEnabled(!true);
+            jTextFieldCidade.setEnabled(!true);
+            jFormattedTextFieldNumeroCasa.setEnabled(!true);
+            
+            jButtonSalvar.setEnabled(!true);
+            jButtonCancelar.setEnabled(!true);
+        }
+        }
+    }//GEN-LAST:event_jButtonSalvarActionPerformed
+
+    // AÇÃO DO BOTÃO NOVO
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        flag =1;
+        jTextFieldNome.setEnabled(true);
+        jFormattedTextFieldCPF.setEnabled(true);
+        jFormattedTextFieldTelefone.setEnabled(true);
+        jTextFieldEndereco.setEnabled(true);
+        jTextFieldBairro.setEnabled(true);
+        jTextFieldEstado.setEnabled(true);
+        jTextFieldCidade.setEnabled(true);
+        jFormattedTextFieldNumeroCasa.setEnabled(true);
+        
+        jButtonSalvar.setEnabled(true);
+        jButtonCancelar.setEnabled(true);
+        
+        jTextFieldNome.setText("");
+        jFormattedTextFieldCPF.setText("");
+        jFormattedTextFieldTelefone.setText("");
+        jTextFieldEndereco.setText("");
+        jTextFieldBairro.setText("");
+        jTextFieldBairro.setText("");
+        jTextFieldCidade.setText("");
+        jFormattedTextFieldNumeroCasa.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,5 +402,28 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonSalvar;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
+    private javax.swing.JFormattedTextField jFormattedTextFieldNumeroCasa;
+    private javax.swing.JFormattedTextField jFormattedTextFieldTelefone;
+    private javax.swing.JFormattedTextField jFormattedTextField_Pesquisa;
+    private javax.swing.JLabel jLabelCPF;
+    private javax.swing.JLabel jLabelCadastrodeAlunos;
+    private javax.swing.JLabel jLabelNome;
+    private javax.swing.JLabel jLabelRespBairro;
+    private javax.swing.JLabel jLabelRespCidade;
+    private javax.swing.JLabel jLabelRespEndereco;
+    private javax.swing.JLabel jLabelRespEstado;
+    private javax.swing.JLabel jLabelRespNumeroCasa;
+    private javax.swing.JLabel jLabelTelefone;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextFieldBairro;
+    private javax.swing.JTextField jTextFieldCidade;
+    private javax.swing.JTextField jTextFieldEndereco;
+    private javax.swing.JTextField jTextFieldEstado;
+    private javax.swing.JTextField jTextFieldNome;
     // End of variables declaration//GEN-END:variables
 }
