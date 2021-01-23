@@ -28,12 +28,13 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
     public FichaCadastroAluno() {
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_justica.png")).getImage());
         initComponents();
+        preencherProfessor();
     }
     
     // METÓDO PARA BUSCAR O USUÁRIO NO BANCO DE DADOS
-    public void preencherUsuario(){
+    public void preencherProfessor(){
         conex.getConnection();
-        conex.executasql("select *from professor order by nome_professor"); 
+        conex.executasql("select *from professores order by nome_professor"); 
         try {
             conex.rs.first();
             jComboBox_Professor.removeAllItems();
@@ -80,6 +81,8 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         jButtonSalvar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jButton_Novo = new javax.swing.JButton();
+        jButton_Editar = new javax.swing.JButton();
+        jButtonExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -213,11 +216,11 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
                                 .addComponent(jFormattedTextFieldNumeroCasa)
                                 .addGap(56, 56, 56))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBox_Professor, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
-                        .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(85, 85, 85)
+                        .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton_Pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -257,6 +260,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         );
 
         jButtonSalvar.setText("Salvar");
+        jButtonSalvar.setEnabled(false);
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalvarActionPerformed(evt);
@@ -264,6 +268,12 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         });
 
         jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.setEnabled(false);
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
 
         jButton_Novo.setText("Novo");
         jButton_Novo.addActionListener(new java.awt.event.ActionListener() {
@@ -271,6 +281,17 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
                 jButton_NovoActionPerformed(evt);
             }
         });
+
+        jButton_Editar.setText("Editar");
+        jButton_Editar.setEnabled(false);
+        jButton_Editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_EditarActionPerformed(evt);
+            }
+        });
+
+        jButtonExcluir.setText("Excluir");
+        jButtonExcluir.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -284,8 +305,12 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
                         .addComponent(jButton_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -304,8 +329,10 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvar)
                     .addComponent(jButtonCancelar)
-                    .addComponent(jButton_Novo))
-                .addContainerGap(8, Short.MAX_VALUE))
+                    .addComponent(jButton_Novo)
+                    .addComponent(jButton_Editar)
+                    .addComponent(jButtonExcluir))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -374,7 +401,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
-    // AÇÃO DO BOTÃO DE CRIAR NOVO USUÁRIO
+    // AÇÃO DO BOTÃO DE CRIAR NOVO ALUNO
     private void jButton_NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_NovoActionPerformed
         flag =1;
         jTextFieldNome.setEnabled(true);
@@ -385,9 +412,12 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         jTextFieldEstado.setEnabled(true);
         jTextFieldCidade.setEnabled(true);
         jFormattedTextFieldNumeroCasa.setEnabled(true);
+        jComboBox_Professor.setEnabled(true);
         
         jButtonSalvar.setEnabled(true);
         jButtonCancelar.setEnabled(true);
+        jButtonExcluir.setEnabled(!true);
+        jButton_Editar.setEnabled(!true);
         
         jTextFieldNome.setText("");
         jFormattedTextFieldCPF.setText("");
@@ -403,6 +433,46 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
     private void jButton_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_PesquisarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_PesquisarActionPerformed
+
+    // AÇÃO DO BOTÃO CANCELAR
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        jTextFieldNome.setEnabled(!true);
+        jFormattedTextFieldCPF.setEnabled(!true);
+        jFormattedTextFieldTelefone.setEnabled(!true);
+        jTextFieldEndereco.setEnabled(!true);
+        jTextFieldBairro.setEnabled(!true);
+        jTextFieldEstado.setEnabled(!true);
+        jTextFieldCidade.setEnabled(!true);
+        jFormattedTextFieldNumeroCasa.setEnabled(!true);
+        
+        jTextFieldNome.setText("");
+        jFormattedTextFieldCPF.setText("");
+        jFormattedTextFieldTelefone.setText("");
+        jTextFieldEndereco.setText("");
+        jTextFieldBairro.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldCidade.setText("");
+        jFormattedTextFieldNumeroCasa.setText("");
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    // AÇÃO DO BOTÃO EDITAR
+    private void jButton_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EditarActionPerformed
+        flag = 2;
+        jTextFieldNome.setEnabled(true);
+        jFormattedTextFieldCPF.setEnabled(true);
+        jFormattedTextFieldTelefone.setEnabled(true);
+        jTextFieldEndereco.setEnabled(true);
+        jTextFieldBairro.setEnabled(true);
+        jTextFieldEstado.setEnabled(true);
+        jTextFieldCidade.setEnabled(true);
+        jFormattedTextFieldNumeroCasa.setEnabled(true);
+        
+        jButtonSalvar.setEnabled(true);
+        jButtonExcluir.setEnabled(false);
+        jButton_Novo.setEnabled(false); 
+        jButton_Editar.setEnabled(false);
+        jButton_Pesquisar.setEnabled(false);
+    }//GEN-LAST:event_jButton_EditarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -441,7 +511,9 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonSalvar;
+    private javax.swing.JButton jButton_Editar;
     private javax.swing.JButton jButton_Novo;
     private javax.swing.JButton jButton_Pesquisar;
     private javax.swing.JComboBox<String> jComboBox_Professor;
