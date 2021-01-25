@@ -31,25 +31,28 @@
                       <Component id="jPanel1" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="322" max="-2" attributes="0"/>
-                      <Component id="jLabelCadastrodeAlunos" min="-2" pref="221" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="322" max="-2" attributes="0"/>
+                              <Component id="jLabelCadastrodeAlunos" min="-2" pref="221" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton_Novo" min="-2" pref="97" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButtonSalvar" min="-2" pref="107" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButton_Editar" min="-2" pref="119" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButton_Excluir" min="-2" pref="122" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButtonCancelar" min="-2" pref="113" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton_Novo" min="-2" pref="97" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButtonSalvar" min="-2" pref="107" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton_Editar" min="-2" pref="119" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton_Excluir" min="-2" pref="122" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButtonCancelar" min="-2" pref="113" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,15 +63,15 @@
               <Component id="jLabelCadastrodeAlunos" min="-2" pref="25" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton_Novo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButtonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton_Editar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton_Excluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <EmptySpace pref="27" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -94,66 +97,69 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabelNome" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="jLabelRespEndereco" alignment="0" pref="56" max="32767" attributes="0"/>
-                      <Component id="jLabelRespEstado" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabelNome" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="jLabelRespEndereco" alignment="0" pref="56" max="32767" attributes="0"/>
+                              <Component id="jLabelRespEstado" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextFieldEndereco" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jTextFieldNome" min="-2" pref="249" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                  <Component id="jLabelCPF" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextFieldEndereco" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jTextFieldNome" min="-2" pref="249" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="jLabelCPF" min="-2" pref="32" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jFormattedTextFieldCPF" min="-2" pref="171" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabelRespBairro" min="-2" pref="52" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jTextFieldBairro" min="-2" pref="254" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabelTelefone" min="-2" pref="68" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jFormattedTextFieldTelefone" min="-2" pref="220" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jTextFieldEstado" min="-2" pref="193" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Component id="jLabelRespCidade" min="-2" pref="57" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jFormattedTextFieldCPF" min="-2" pref="171" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldCidade" min="-2" pref="322" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabelRespNumeroCasa" min="-2" pref="64" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jFormattedTextFieldNumeroCasa" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabelRespBairro" min="-2" pref="52" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextFieldBairro" min="-2" pref="254" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabelTelefone" min="-2" pref="68" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jFormattedTextFieldTelefone" min="-2" pref="220" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace pref="12" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jTextFieldEstado" min="-2" pref="193" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="jLabelRespCidade" min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="111" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextFieldCidade" min="-2" pref="322" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelRespNumeroCasa" min="-2" pref="64" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jFormattedTextFieldNumeroCasa" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                          <Component id="jTextField_id_Professor" min="-2" pref="56" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jFormattedTextField_Pesquisa" min="-2" pref="206" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jButton_Pesquisar" min="-2" pref="121" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="110" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton_Upload" min="-2" pref="118" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jFormattedTextField_Pesquisa" min="-2" pref="206" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jButton_Pesquisar" min="-2" pref="121" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -185,14 +191,20 @@
                       <Component id="jLabelRespNumeroCasa" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jFormattedTextFieldNumeroCasa" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jFormattedTextField_Pesquisa" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jButton_Pesquisar" alignment="3" max="32767" attributes="0"/>
-                      <Component id="jButton_Upload" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jFormattedTextField_Pesquisa" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jButton_Pesquisar" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jTextField_id_Professor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -329,17 +341,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_PesquisarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton_Upload">
+        <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Upload"/>
+            <Property name="text" type="java.lang.String" value="Cod. do Professor"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_UploadActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JTextField" name="jTextField_id_Professor">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Escolha o arquivo"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>

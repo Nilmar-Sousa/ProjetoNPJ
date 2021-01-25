@@ -15,6 +15,15 @@ public class BeansAlunos {
     private String cidade_Aluno;
     private String numerocasa_Aluno;
     private String nomeProfessor;
+    private String pesquisa_Aluno;
+
+    public String getPesquisa_Aluno() {
+        return pesquisa_Aluno;
+    }
+
+    public void setPesquisa_Aluno(String pesquisa_Aluno) {
+        this.pesquisa_Aluno = pesquisa_Aluno;
+    }
 
     public String getNomeProfessor() {
         return nomeProfessor;

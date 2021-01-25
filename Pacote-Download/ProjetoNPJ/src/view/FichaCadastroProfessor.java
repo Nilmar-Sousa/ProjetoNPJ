@@ -59,8 +59,8 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
         jFormattedTextFieldNumeroCasa = new javax.swing.JFormattedTextField();
         jFormattedTextField_Pesquisa = new javax.swing.JFormattedTextField();
         jButton_Pesquisar = new javax.swing.JButton();
-        jButton_Upload = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField_id_Professor = new javax.swing.JTextField();
         jButtonSalvar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jButton_Novo = new javax.swing.JButton();
@@ -148,14 +148,9 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
             }
         });
 
-        jButton_Upload.setText("Upload");
-        jButton_Upload.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_UploadActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("Cod. do Professor");
 
-        jLabel1.setText("Escolha o arquivo");
+        jTextField_id_Professor.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -163,54 +158,55 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelRespEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                    .addComponent(jLabelRespEstado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelRespEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                            .addComponent(jLabelRespEstado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(21, 21, 21)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldEndereco)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(jLabelCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldEndereco)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jLabelCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabelRespBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabelTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(12, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jTextFieldEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
+                                .addComponent(jLabelRespCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabelRespBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabelTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelRespNumeroCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jFormattedTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(12, Short.MAX_VALUE))
+                                .addComponent(jFormattedTextFieldNumeroCasa)
+                                .addGap(66, 66, 66))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextFieldEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabelRespCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelRespNumeroCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jFormattedTextFieldNumeroCasa)
-                        .addGap(66, 66, 66))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton_Upload, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton_Pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                        .addComponent(jTextField_id_Professor, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton_Pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,13 +233,16 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
                     .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelRespNumeroCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFormattedTextFieldNumeroCasa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Pesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton_Upload)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton_Pesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField_id_Professor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         jButtonSalvar.setText("Salvar");
@@ -291,22 +290,23 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(322, 322, 322)
-                        .addComponent(jLabelCadastrodeAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(322, 322, 322)
+                                .addComponent(jLabelCadastrodeAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton_Excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton_Excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,14 +315,14 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
                 .addComponent(jLabelCadastrodeAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_Novo)
                     .addComponent(jButtonSalvar)
-                    .addComponent(jButtonCancelar)
                     .addComponent(jButton_Editar)
-                    .addComponent(jButton_Excluir))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(jButton_Excluir)
+                    .addComponent(jButtonCancelar))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -388,6 +388,7 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
             jButtonSalvar.setEnabled(!true);
             jButtonCancelar.setEnabled(!true);
         }if(flag == 2){
+          //  mod.setId_Professor(Integer.parseInt(jTextField_id_Professor.getText()));
             mod.setNome_Professor(jTextFieldNome.getText());
             mod.setCpf_Professor(jFormattedTextFieldCPF.getText());
             mod.setTelefone_Professor(jFormattedTextFieldTelefone.getText());
@@ -398,6 +399,7 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
             mod.setNumerocasa_Professor(jFormattedTextFieldNumeroCasa.getText());
             dao.alterar(mod);
             
+            jTextField_id_Professor.setText("");
             jTextFieldNome.setText("");
             jFormattedTextFieldCPF.setText("");
             jFormattedTextFieldTelefone.setText("");
@@ -407,6 +409,7 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
             jTextFieldCidade.setText("");
             jFormattedTextFieldNumeroCasa.setText("");
             jFormattedTextField_Pesquisa.setText("");
+            
             
             jTextFieldNome.setEnabled(!true);
             jFormattedTextFieldCPF.setEnabled(!true);
@@ -450,12 +453,6 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
         jTextFieldCidade.setText("");
         jFormattedTextFieldNumeroCasa.setText("");
     }//GEN-LAST:event_jButton_NovoActionPerformed
-
-    // AÇÃO DO BOTÃO UPLOAD
-    private void jButton_UploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_UploadActionPerformed
-        javax.swing.JFileChooser fc = new JFileChooser();
-        int res = fc.showOpenDialog(null);
-    }//GEN-LAST:event_jButton_UploadActionPerformed
 
     // AÇÃO DO BOTÃO EDITAR
     private void jButton_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EditarActionPerformed
@@ -531,7 +528,7 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
     private void jButton_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_PesquisarActionPerformed
         mod.setPesquisa_Professor(jFormattedTextField_Pesquisa.getText());
         BeansProfessores model = dao.busca_professores(mod);
-       // jTextFieldIdCliente.setText(String.valueOf(model.getId_Professor()));
+        jTextField_id_Professor.setText(String.valueOf(model.getId_Professor()));
         jTextFieldNome.setText(model.getNome_Professor());
         jFormattedTextFieldCPF.setText(model.getCpf_Professor());
         jFormattedTextFieldTelefone.setText(model.getTelefone_Professor());
@@ -589,12 +586,11 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Excluir;
     private javax.swing.JButton jButton_Novo;
     private javax.swing.JButton jButton_Pesquisar;
-    private javax.swing.JButton jButton_Upload;
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
     private javax.swing.JFormattedTextField jFormattedTextFieldNumeroCasa;
     private javax.swing.JFormattedTextField jFormattedTextFieldTelefone;
     private javax.swing.JFormattedTextField jFormattedTextField_Pesquisa;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelCPF;
     private javax.swing.JLabel jLabelCadastrodeAlunos;
     private javax.swing.JLabel jLabelNome;
@@ -610,5 +606,6 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldEndereco;
     private javax.swing.JTextField jTextFieldEstado;
     private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextField_id_Professor;
     // End of variables declaration//GEN-END:variables
 }

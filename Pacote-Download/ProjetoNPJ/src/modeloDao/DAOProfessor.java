@@ -59,7 +59,7 @@ public class DAOProfessor {
     public void alterar(BeansProfessores mod) {
         conex.getConnection();
         try {
-            PreparedStatement pst = conex.con.prepareStatement("update professores set nome_professor=?, telefone_professor=?, endereco_professor=?, bairro_professor=?, estado=professor=?, cidade_professor=?, numerocasa_professor=? where cpf_professor=?");
+            PreparedStatement pst = conex.con.prepareStatement("update professores set nome_professor=?, telefone_professor=?, endereco_professor=?, bairro_professor=?, estado_professor=?, cidade_professor=?, numerocasa_professor=? where cpf_professor=?");
             pst.setString(1, mod.getNome_Professor());
             pst.setString(2, mod.getTelefone_Professor());
             pst.setString(3, mod.getEndereco_Professor());

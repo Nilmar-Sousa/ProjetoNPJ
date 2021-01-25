@@ -55,7 +55,29 @@ public class DAOAluno {
         conex.desconectar();
     }
     
-    //METÓDO PARA BUSCAR O USUÁRIO PELO CÓDIGO
+    // METÓDO PARA O BANCO DE DADOS EDITAR OS REGISTROS
+    public void alterar(BeansAlunos mod) {
+        conex.getConnection();
+        try {
+            PreparedStatement pst = conex.con.prepareStatement("update alunos set nome_aluno=?, telefone_aluno=?, endereco_aluno=?, bairro_aluno=?, estado_aluno=?, cidade_aluno=?, numerocasa_aluno=?, nome_professor=? where cpf_aluno=?");
+            pst.setString(1, mod.getNome_aluno());
+            pst.setString(2, mod.getTelefone_Aluno());
+            pst.setString(3, mod.getEndereco_Aluno());
+            pst.setString(4, mod.getBairro_Aluno());
+            pst.setString(5, mod.getEstado_Aluno());
+            pst.setString(6, mod.getCidade_Aluno());
+            pst.setString(7, mod.getNumerocasa_Aluno());
+            pst.setString(8, mod.getNomeProfessor());
+            pst.setString(9, mod.getCpf_Aluno());
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Dados do professor alterado com sucesso ");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro na alteração dos dados do professor " + ex.getMessage());
+        }
+        conex.desconectar();
+    }
+    
+    //METÓDO PARA BUSCAR OS PROFESSORES PELO CÓDIGO
     public void BuscarProfessores(String nomeUsuario){
         conexProfessor.getConnection();
         conexProfessor.executasql("select *from professores where nome_professor='"+nomeUsuario+"'");
