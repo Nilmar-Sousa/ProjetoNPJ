@@ -14,6 +14,7 @@ public class BeansProfessores {
     private String estado_Professor;
     private String cidade_Professor;
     private String numerocasa_Professor;
+    private String pesquisa_Professor;
 
     public int getId_Professor() {
         return id_Professor;
@@ -85,5 +86,13 @@ public class BeansProfessores {
 
     public void setNumerocasa_Professor(String numerocasa_Professor) {
         this.numerocasa_Professor = numerocasa_Professor;
+    }
+    
+    public String getPesquisa_Professor(){
+        return pesquisa_Professor;
+    }
+    
+    public void setPesquisa_Professor(String pesquisa_Professor){
+        this.pesquisa_Professor = pesquisa_Professor;
     }
 }

@@ -88,9 +88,9 @@ public class DaoClientes {
             pst.setString(22, mod.getEndereco_Responsavel());
             pst.setInt(23, mod.getId_Cliente());
             pst.execute();
-            JOptionPane.showMessageDialog(null, "Usuário alterado com sucesso ");
+            JOptionPane.showMessageDialog(null, "Cliente alterado com sucesso ");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro na alteração do usuário "+ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro na alteração do cliente "+ex.getMessage());
         }
         conex.desconectar();
     }

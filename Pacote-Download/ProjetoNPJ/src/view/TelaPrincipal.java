@@ -17,7 +17,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     Acompanhamento telaAcompanhamento = new Acompanhamento();
     Relatorio telaRelatorioAcomp = new Relatorio();
     TelaAssistidos telaAssistidos = new TelaAssistidos();
-    TelaPesquisa telaPesquisa = new TelaPesquisa();
     FichaCadastroAluno telaAluno = new FichaCadastroAluno();
     FichaCadastroProfessor telaProfessor = new FichaCadastroProfessor();
     FichaCadastroPasta telaPasta = new FichaCadastroPasta();

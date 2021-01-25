@@ -935,6 +935,7 @@ public class FichaCadastroClientes extends javax.swing.JFrame {
         mod.setNarracaoFatos(jTextAreaNarracao.getText());
         dao.alterar(mod);
         
+        jTextFieldIdCliente.setText("");
         jTextFieldNome.setText("");
         jTextFieldEstadoCivil.setText("");
         jTextFieldProfissao.setText("");
@@ -985,7 +986,6 @@ public class FichaCadastroClientes extends javax.swing.JFrame {
 
         jButtonSalvar.setEnabled(false);
         jButtonNovo.setEnabled(true);
-        jTextFieldIdCliente.setText("");
         jButtonCancelar.setEnabled(false);
         jFormattedTextFieldPesquisa.setEnabled(true);
         jButtonBuscar.setEnabled(true);

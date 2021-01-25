@@ -251,25 +251,6 @@ public class Acompanhamento extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     
-    //   EVENTO AO CLICAR DUAS VEZES NA TABELA
-    private void jTableClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableClientesMouseClicked
-        String cpf_cliente =""+jTableClientes.getValueAt(jTableClientes.getSelectedRow(), 1); 
-        conex.getConnection();
-        conex.executasql("select *from clientes where cpf_cliente='"+cpf_cliente+"'");
-        try {
-            conex.rs.first();
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "Erro ao selecionar "+ex);
-        }
-        conex.desconectar();
-        jComboBoxUsuarios.setEnabled(true);
-        jDateChooser1.setEnabled(true);
-        jTextAreaDescricao.setEnabled(true);
-        jButtonFInalizar.setEnabled(true);
-        jButtonCancelar.setEnabled(true);
-        jTextAreaDescricao.setLineWrap(true);
-    }//GEN-LAST:event_jTableClientesMouseClicked
-
     
     //    AÇÃO DO BOTÃO ATUALIZAR
     private void jButtonFInalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFInalizarActionPerformed
@@ -309,6 +290,25 @@ public class Acompanhamento extends javax.swing.JFrame {
     private void jFormattedCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedCPFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedCPFActionPerformed
+
+    //   EVENTO AO CLICAR DUAS VEZES NA TABELA
+    private void jTableClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableClientesMouseClicked
+        String cpf_cliente =""+jTableClientes.getValueAt(jTableClientes.getSelectedRow(), 1);
+        conex.getConnection();
+        conex.executasql("select *from clientes where cpf_cliente='"+cpf_cliente+"'");
+        try {
+            conex.rs.first();
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Erro ao selecionar "+ex);
+        }
+        conex.desconectar();
+        jComboBoxUsuarios.setEnabled(true);
+        jDateChooser1.setEnabled(true);
+        jTextAreaDescricao.setEnabled(true);
+        jButtonFInalizar.setEnabled(true);
+        jButtonCancelar.setEnabled(true);
+        jTextAreaDescricao.setLineWrap(true);
+    }//GEN-LAST:event_jTableClientesMouseClicked
 
     //  METÓDO PARA PREENCHER A TABELA CLIENTES
     public void preencheTabela(String sql){

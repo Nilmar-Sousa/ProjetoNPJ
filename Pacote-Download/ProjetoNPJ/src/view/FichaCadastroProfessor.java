@@ -5,6 +5,7 @@
  */
 package view;
 
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import modelBeans.BeansProfessores;
 import modeloConection.ConexaoBD;
@@ -57,10 +58,14 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
         jLabelRespNumeroCasa = new javax.swing.JLabel();
         jFormattedTextFieldNumeroCasa = new javax.swing.JFormattedTextField();
         jFormattedTextField_Pesquisa = new javax.swing.JFormattedTextField();
-        jButton2 = new javax.swing.JButton();
+        jButton_Pesquisar = new javax.swing.JButton();
+        jButton_Upload = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jButtonSalvar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jButton_Novo = new javax.swing.JButton();
+        jButton_Editar = new javax.swing.JButton();
+        jButton_Excluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -136,7 +141,21 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        jButton2.setText("Pesquisar");
+        jButton_Pesquisar.setText("Pesquisar");
+        jButton_Pesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_PesquisarActionPerformed(evt);
+            }
+        });
+
+        jButton_Upload.setText("Upload");
+        jButton_Upload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_UploadActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Escolha o arquivo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -182,11 +201,15 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jFormattedTextFieldNumeroCasa)
                         .addGap(66, 66, 66))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton_Upload, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton_Pesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
         );
         jPanel1Layout.setVerticalGroup(
@@ -217,7 +240,9 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jFormattedTextField_Pesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton_Pesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton_Upload)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -229,11 +254,30 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
         });
 
         jButtonCancelar.setText("Cancelar");
-
-        jButton1.setText("Novo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
+
+        jButton_Novo.setText("Novo");
+        jButton_Novo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_NovoActionPerformed(evt);
+            }
+        });
+
+        jButton_Editar.setText("Editar");
+        jButton_Editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_EditarActionPerformed(evt);
+            }
+        });
+
+        jButton_Excluir.setText("Excluir");
+        jButton_Excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ExcluirActionPerformed(evt);
             }
         });
 
@@ -253,10 +297,14 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(jButton_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton_Excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -269,9 +317,11 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(jButton_Novo)
                     .addComponent(jButtonSalvar)
-                    .addComponent(jButtonCancelar))
+                    .addComponent(jButtonCancelar)
+                    .addComponent(jButton_Editar)
+                    .addComponent(jButton_Excluir))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -337,12 +387,47 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
             
             jButtonSalvar.setEnabled(!true);
             jButtonCancelar.setEnabled(!true);
+        }if(flag == 2){
+            mod.setNome_Professor(jTextFieldNome.getText());
+            mod.setCpf_Professor(jFormattedTextFieldCPF.getText());
+            mod.setTelefone_Professor(jFormattedTextFieldTelefone.getText());
+            mod.setEndereco_Professor(jTextFieldEndereco.getText());
+            mod.setBairro_Professor(jTextFieldBairro.getText());
+            mod.setEstado_Professor(jTextFieldEstado.getText());
+            mod.setCidade_Professor(jTextFieldCidade.getText());
+            mod.setNumerocasa_Professor(jFormattedTextFieldNumeroCasa.getText());
+            dao.alterar(mod);
+            
+            jTextFieldNome.setText("");
+            jFormattedTextFieldCPF.setText("");
+            jFormattedTextFieldTelefone.setText("");
+            jTextFieldEndereco.setText("");
+            jTextFieldBairro.setText("");
+            jTextFieldEstado.setText("");
+            jTextFieldCidade.setText("");
+            jFormattedTextFieldNumeroCasa.setText("");
+            jFormattedTextField_Pesquisa.setText("");
+            
+            jTextFieldNome.setEnabled(!true);
+            jFormattedTextFieldCPF.setEnabled(!true);
+            jFormattedTextFieldTelefone.setEnabled(!true);
+            jTextFieldEndereco.setEnabled(!true);
+            jTextFieldBairro.setEnabled(!true);
+            jTextFieldEstado.setEnabled(!true);
+            jTextFieldCidade.setEnabled(!true);
+            jFormattedTextFieldNumeroCasa.setEnabled(!true);
+            jFormattedTextField_Pesquisa.setEnabled(true);
+            
+            jButtonSalvar.setEnabled(false);
+            jButton_Novo.setEnabled(true);
+            jButtonCancelar.setEnabled(false);
+            jButton_Pesquisar.setEnabled(true);
         }
         }
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     // AÇÃO DO BOTÃO NOVO
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton_NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_NovoActionPerformed
         flag =1;
         jTextFieldNome.setEnabled(true);
         jFormattedTextFieldCPF.setEnabled(true);
@@ -364,7 +449,103 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
         jTextFieldBairro.setText("");
         jTextFieldCidade.setText("");
         jFormattedTextFieldNumeroCasa.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton_NovoActionPerformed
+
+    // AÇÃO DO BOTÃO UPLOAD
+    private void jButton_UploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_UploadActionPerformed
+        javax.swing.JFileChooser fc = new JFileChooser();
+        int res = fc.showOpenDialog(null);
+    }//GEN-LAST:event_jButton_UploadActionPerformed
+
+    // AÇÃO DO BOTÃO EDITAR
+    private void jButton_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_EditarActionPerformed
+        flag = 2;
+        jTextFieldNome.setEnabled(true);
+        jFormattedTextFieldCPF.setEnabled(true);
+        jFormattedTextFieldTelefone.setEnabled(true);
+        jTextFieldEndereco.setEnabled(true);
+        jTextFieldBairro.setEnabled(true);
+        jTextFieldEstado.setEnabled(true);
+        jTextFieldCidade.setEnabled(true);
+        jFormattedTextFieldNumeroCasa.setEnabled(true);
+        jFormattedTextField_Pesquisa.setEnabled(!true);
+        
+        jButtonSalvar.setEnabled(true);
+        jButton_Excluir.setEnabled(false);
+        jButton_Novo.setEnabled(false); 
+        jButton_Editar.setEnabled(false);
+        jButton_Pesquisar.setEnabled(false);
+    }//GEN-LAST:event_jButton_EditarActionPerformed
+
+    // AÇÃO DO BOTÃO EXCLUIR
+    private void jButton_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ExcluirActionPerformed
+        int resposta = 0;
+        resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir? ");
+        mod.setCpf_Professor(jFormattedTextFieldCPF.getText());
+        if(resposta == JOptionPane.YES_OPTION){
+        dao.excluir(mod);
+        jTextFieldNome.setText("");
+        jFormattedTextFieldCPF.setText("");
+        jFormattedTextFieldTelefone.setText("");
+        jTextFieldEndereco.setText("");
+        jTextFieldBairro.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldCidade.setText("");
+        jFormattedTextFieldNumeroCasa.setText("");
+        jFormattedTextField_Pesquisa.setText("");
+        
+        jButton_Editar.setEnabled(false);
+        jButtonCancelar.setEnabled(false);
+        jButton_Excluir.setEnabled(false);
+        jButton_Novo.setEnabled(true);
+        jButton_Pesquisar.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButton_ExcluirActionPerformed
+
+    // AÇÃO DO BOTÃO CANCELAR
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        jTextFieldNome.setEnabled(!true);
+        jFormattedTextFieldCPF.setEnabled(!true);
+        jFormattedTextFieldTelefone.setEnabled(!true);
+        jTextFieldEndereco.setEnabled(!true);
+        jTextFieldBairro.setEnabled(!true);
+        jTextFieldEstado.setEnabled(!true);
+        jTextFieldCidade.setEnabled(!true);
+        jFormattedTextFieldNumeroCasa.setEnabled(!true);
+        jFormattedTextField_Pesquisa.setEnabled(!true);
+        
+        jButton_Pesquisar.setEnabled(!true);
+        
+        jTextFieldNome.setText("");
+        jFormattedTextFieldCPF.setText("");
+        jFormattedTextFieldTelefone.setText("");
+        jTextFieldEndereco.setText("");
+        jTextFieldBairro.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldCidade.setText("");
+        jFormattedTextFieldNumeroCasa.setText("");
+        jFormattedTextFieldCPF.setText("");
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    // AÇÃO DO BOTÃO PESQUISAR
+    private void jButton_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_PesquisarActionPerformed
+        mod.setPesquisa_Professor(jFormattedTextField_Pesquisa.getText());
+        BeansProfessores model = dao.busca_professores(mod);
+       // jTextFieldIdCliente.setText(String.valueOf(model.getId_Professor()));
+        jTextFieldNome.setText(model.getNome_Professor());
+        jFormattedTextFieldCPF.setText(model.getCpf_Professor());
+        jFormattedTextFieldTelefone.setText(model.getTelefone_Professor());
+        jTextFieldEndereco.setText(model.getEndereco_Professor());
+        jTextFieldBairro.setText(model.getBairro_Professor());
+        jTextFieldEstado.setText(model.getEstado_Professor());
+        jTextFieldCidade.setText(model.getCidade_Professor());
+        jFormattedTextFieldNumeroCasa.setText(model.getNumerocasa_Professor());
+        jButton_Editar.setEnabled(true);
+        jButton_Excluir.setEnabled(true);
+        jButtonCancelar.setEnabled(!false);
+        jButton_Novo.setEnabled(!true);
+        jButtonSalvar.setEnabled(false);
+    }//GEN-LAST:event_jButton_PesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -402,14 +583,18 @@ public class FichaCadastroProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonSalvar;
+    private javax.swing.JButton jButton_Editar;
+    private javax.swing.JButton jButton_Excluir;
+    private javax.swing.JButton jButton_Novo;
+    private javax.swing.JButton jButton_Pesquisar;
+    private javax.swing.JButton jButton_Upload;
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
     private javax.swing.JFormattedTextField jFormattedTextFieldNumeroCasa;
     private javax.swing.JFormattedTextField jFormattedTextFieldTelefone;
     private javax.swing.JFormattedTextField jFormattedTextField_Pesquisa;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelCPF;
     private javax.swing.JLabel jLabelCadastrodeAlunos;
     private javax.swing.JLabel jLabelNome;

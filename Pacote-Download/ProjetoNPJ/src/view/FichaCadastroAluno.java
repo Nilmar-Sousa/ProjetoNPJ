@@ -292,6 +292,11 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
 
         jButtonExcluir.setText("Excluir");
         jButtonExcluir.setEnabled(false);
+        jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -367,7 +372,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha o campo bairro para continuar");
         }else{
         if(flag == 1){
-            mod.setNomeProfessor(jTextFieldNome.getText());
+            mod.setNome_aluno(jTextFieldNome.getText());
             mod.setCpf_Aluno(jFormattedTextFieldCPF.getText());
             mod.setTelefone_Aluno(jFormattedTextFieldTelefone.getText());
             mod.setEndereco_Aluno(jTextFieldEndereco.getText());
@@ -375,6 +380,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
             mod.setEstado_Aluno(jTextFieldEstado.getText());
             mod.setCidade_Aluno(jTextFieldCidade.getText());
             mod.setNumerocasa_Aluno(jFormattedTextFieldNumeroCasa.getText());
+            mod.setNomeProfessor((String) jComboBox_Professor.getSelectedItem());
             dao.salvar(mod);
             
             jTextFieldNome.setText("");
@@ -382,7 +388,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
             jFormattedTextFieldTelefone.setText("");
             jTextFieldEndereco.setText("");
             jTextFieldBairro.setText("");
-            jTextFieldBairro.setText("");
+            jTextFieldEstado.setText("");
             jTextFieldCidade.setText("");
             jFormattedTextFieldNumeroCasa.setText("");
             
@@ -394,6 +400,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
             jTextFieldEstado.setEnabled(!true);
             jTextFieldCidade.setEnabled(!true);
             jFormattedTextFieldNumeroCasa.setEnabled(!true);
+            jComboBox_Professor.setEnabled(!false);
             
             jButtonSalvar.setEnabled(!true);
             jButtonCancelar.setEnabled(!true);
@@ -413,7 +420,9 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         jTextFieldCidade.setEnabled(true);
         jFormattedTextFieldNumeroCasa.setEnabled(true);
         jComboBox_Professor.setEnabled(true);
+        jFormattedTextField_Pesquisa.setEnabled(!true);
         
+        jButton_Pesquisar.setEnabled(!true);
         jButtonSalvar.setEnabled(true);
         jButtonCancelar.setEnabled(true);
         jButtonExcluir.setEnabled(!true);
@@ -427,11 +436,12 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         jTextFieldBairro.setText("");
         jTextFieldCidade.setText("");
         jFormattedTextFieldNumeroCasa.setText("");
+        jFormattedTextField_Pesquisa.setText("");
     }//GEN-LAST:event_jButton_NovoActionPerformed
 
     // AÇÃO DO BOTÃO PESQUISAR
     private void jButton_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_PesquisarActionPerformed
-        // TODO add your handling code here:
+        //
     }//GEN-LAST:event_jButton_PesquisarActionPerformed
 
     // AÇÃO DO BOTÃO CANCELAR
@@ -444,6 +454,9 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         jTextFieldEstado.setEnabled(!true);
         jTextFieldCidade.setEnabled(!true);
         jFormattedTextFieldNumeroCasa.setEnabled(!true);
+        jFormattedTextField_Pesquisa.setEnabled(!true);
+        
+        jButton_Pesquisar.setEnabled(!true);
         
         jTextFieldNome.setText("");
         jFormattedTextFieldCPF.setText("");
@@ -473,6 +486,29 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         jButton_Editar.setEnabled(false);
         jButton_Pesquisar.setEnabled(false);
     }//GEN-LAST:event_jButton_EditarActionPerformed
+
+    // AÇÃO DO BOTÃO EXCLUIR
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
+        int resposta = 0;
+        resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir? ");
+        mod.setCpf_Aluno(jFormattedTextFieldCPF.getText());
+        if(resposta == JOptionPane.YES_OPTION){
+        dao.excluir(mod);
+        jTextFieldNome.setText("");
+        jFormattedTextFieldCPF.setText("");
+        jFormattedTextFieldTelefone.setText("");
+        jTextFieldEndereco.setText("");
+        jTextFieldBairro.setText("");
+        jTextFieldEstado.setText("");
+        jTextFieldCidade.setText("");
+        jFormattedTextFieldNumeroCasa.setText("");
+        
+        jButton_Editar.setEnabled(false);
+        jButtonCancelar.setEnabled(false);
+        jButtonExcluir.setEnabled(false);
+        jButton_Novo.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     /**
      * @param args the command line arguments
