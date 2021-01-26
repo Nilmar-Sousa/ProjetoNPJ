@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
@@ -55,7 +55,7 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField5" alignment="0" min="-2" pref="351" max="-2" attributes="0"/>
+                                      <Component id="jTextField_Titulo" alignment="0" min="-2" pref="351" max="-2" attributes="0"/>
                                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -77,7 +77,7 @@
                                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jTextField6" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextField_Status" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -88,6 +88,11 @@
                                           <Component id="jLabel3" min="-2" pref="164" max="-2" attributes="0"/>
                                           <Component id="jLabel13" min="-2" pref="87" max="-2" attributes="0"/>
                                           <Component id="jTextField10" min="-2" pref="254" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jFormattedTextField_Cpf_Cliente" min="-2" pref="184" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jButton_Budcar" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
@@ -102,7 +107,7 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel1" min="-2" pref="93" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="87" max="-2" attributes="0"/>
+                                  <Component id="jTextField_id_pasta" min="-2" pref="87" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -114,16 +119,12 @@
                                   <Component id="jLabel4" min="-2" pref="88" max="-2" attributes="0"/>
                                   <Component id="jTextField4" min="-2" pref="193" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Component id="jTextField3" min="-2" pref="192" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jToggleButton3" min="-2" pref="113" max="-2" attributes="0"/>
+                              <Component id="jToggleButton_Novo" min="-2" pref="113" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jToggleButton5" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="jToggleButton_Salvar" min="-2" pref="105" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="jToggleButton4" min="-2" pref="105" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -171,13 +172,13 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_id_pasta" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jFormattedTextField_Cpf_Cliente" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="jButton_Budcar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="89" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -194,7 +195,7 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jDateChooser1" pref="0" max="32767" attributes="0"/>
-                          <Component id="jTextField5" max="32767" attributes="0"/>
+                          <Component id="jTextField_Titulo" max="32767" attributes="0"/>
                           <Component id="jDateChooser2" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -207,7 +208,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <Component id="jTextField6" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField_Status" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -227,11 +228,11 @@
                       <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jToggleButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jToggleButton_Novo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jToggleButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jToggleButton_Salvar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jToggleButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jToggleButton7" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -246,9 +247,9 @@
         <Property name="text" type="java.lang.String" value="N&#xba; da Pasta"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="jTextField_id_pasta">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_id_pastaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -257,8 +258,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -275,12 +274,12 @@
         <Property name="text" type="java.lang.String" value="Telefone"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jButton_Budcar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_BudcarActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -290,15 +289,10 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable1">
+        <Component class="javax.swing.JTable" name="jTable_Processos">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="N&#xba; da Pasta" type="java.lang.Object"/>
-                <Column editable="true" title="T&#xed;tulo da Pasta" type="java.lang.Object"/>
-                <Column editable="true" title="Data de In&#xed;cio" type="java.lang.Object"/>
-                <Column editable="true" title="Professor Respons&#xe1;vel" type="java.lang.Object"/>
-              </Table>
+              <Table columnCount="0" rowCount="4"/>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
@@ -336,12 +330,12 @@
         <Property name="text" type="java.lang.String" value="T&#xed;tulo do Pasta"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="jTextField_Titulo">
       <Properties>
         <Property name="text" type="java.lang.String" value="ex: Processo de Divorcio"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_TituloActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
@@ -363,7 +357,7 @@
         <Property name="text" type="java.lang.String" value="Status"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JTextField" name="jTextField_Status">
       <Properties>
         <Property name="text" type="java.lang.String" value="ex: Cancelado, Em andamento, Vencido, Perdido"/>
       </Properties>
@@ -468,20 +462,26 @@
         <Property name="text" type="java.lang.String" value="Expluir"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton3">
+    <Component class="javax.swing.JToggleButton" name="jToggleButton_Novo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Novo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton_NovoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Editar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton5">
+    <Component class="javax.swing.JToggleButton" name="jToggleButton_Salvar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton_SalvarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton6">
       <Properties>
@@ -499,6 +499,13 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField10">
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField_Cpf_Cliente">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+          <Format format="###.###.###-##" subtype="-1" type="5"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

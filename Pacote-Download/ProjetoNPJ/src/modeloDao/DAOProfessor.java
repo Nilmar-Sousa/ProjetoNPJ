@@ -91,7 +91,6 @@ public class DAOProfessor {
             mod.setEstado_Professor(conex.rs.getString("estado_professor"));
             mod.setCidade_Professor(conex.rs.getString("cidade_professor"));
             mod.setNumerocasa_Professor(conex.rs.getString("numerocasa_professor"));
-
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Professor não cadastrado ");
         }
