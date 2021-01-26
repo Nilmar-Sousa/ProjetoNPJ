@@ -31,7 +31,7 @@ public class FichaCadastroAluno extends javax.swing.JFrame {
         preencherProfessor();
     }
     
-    // METÓDO PARA BUSCAR O USUÁRIO NO BANCO DE DADOS
+    // METÓDO PARA BUSCAR O PROFESSOR NO BANCO DE DADOS
     public void preencherProfessor(){
         conex.getConnection();
         conex.executasql("select *from professores order by nome_professor"); 

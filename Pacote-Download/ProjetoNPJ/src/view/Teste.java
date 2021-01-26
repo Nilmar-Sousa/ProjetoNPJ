@@ -69,7 +69,7 @@ public class Teste extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jTable_Alunos = new javax.swing.JTable();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton_Novo = new javax.swing.JToggleButton();
@@ -98,6 +98,7 @@ public class Teste extends javax.swing.JFrame {
 
         jLabel1.setText("Nº da Pasta");
 
+        jTextField_id_pasta.setEnabled(false);
         jTextField_id_pasta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_id_pastaActionPerformed(evt);
@@ -106,8 +107,11 @@ public class Teste extends javax.swing.JFrame {
 
         jLabel2.setText("Nome do Assistido");
 
+        jTextField2.setEnabled(false);
+
         jLabel3.setText("CPF do Assistido");
 
+        jTextField4.setEnabled(false);
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -134,11 +138,18 @@ public class Teste extends javax.swing.JFrame {
 
             }
         ));
+        jTable_Processos.setEnabled(false);
+        jTable_Processos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable_ProcessosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable_Processos);
 
         jLabel5.setText("Título do Pasta");
 
         jTextField_Titulo.setText("ex: Processo de Divorcio");
+        jTextField_Titulo.setEnabled(false);
         jTextField_Titulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_TituloActionPerformed(evt);
@@ -147,23 +158,32 @@ public class Teste extends javax.swing.JFrame {
 
         jLabel6.setText("Data de Início");
 
+        jDateChooser1.setEnabled(false);
+
         jLabel7.setText("Data de Conclusão");
+
+        jDateChooser2.setEnabled(false);
 
         jLabel8.setText("Status");
 
         jTextField_Status.setText("ex: Cancelado, Em andamento, Vencido, Perdido");
+        jTextField_Status.setEnabled(false);
 
         jLabel9.setText("Professor Responsável");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lucas Paiva", "Nilmar Pereira", "Matheus Medrado", "Rubens Chato" }));
+        jComboBox1.setEnabled(false);
 
         jLabel10.setText("Telefone");
 
+        jTextField7.setEnabled(false);
+
         jLabel11.setText("CPF ");
+
+        jTextField8.setEnabled(false);
 
         jLabel12.setText("Alunos");
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_Alunos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -174,9 +194,10 @@ public class Teste extends javax.swing.JFrame {
                 "Nome do(a) Aluno(a)", "RA (Registro Acadêmico)", "CPF", "Disciplina"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(jTable_Alunos);
 
         jToggleButton1.setText("Adicionar");
+        jToggleButton1.setEnabled(false);
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -184,6 +205,7 @@ public class Teste extends javax.swing.JFrame {
         });
 
         jToggleButton2.setText("Expluir");
+        jToggleButton2.setEnabled(false);
 
         jToggleButton_Novo.setText("Novo");
         jToggleButton_Novo.addActionListener(new java.awt.event.ActionListener() {
@@ -193,8 +215,10 @@ public class Teste extends javax.swing.JFrame {
         });
 
         jToggleButton4.setText("Editar");
+        jToggleButton4.setEnabled(false);
 
         jToggleButton_Salvar.setText("Salvar");
+        jToggleButton_Salvar.setEnabled(false);
         jToggleButton_Salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton_SalvarActionPerformed(evt);
@@ -202,10 +226,14 @@ public class Teste extends javax.swing.JFrame {
         });
 
         jToggleButton6.setText("Cancelar");
+        jToggleButton6.setEnabled(false);
 
         jToggleButton7.setText("Excluir");
+        jToggleButton7.setEnabled(false);
 
         jLabel13.setText("Registro OAB");
+
+        jTextField10.setEnabled(false);
 
         try {
             jFormattedTextField_Cpf_Cliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -220,45 +248,6 @@ public class Teste extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel5)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel6))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel7))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(jLabel8)
-                                                .addGap(245, 245, 245))
-                                            .addComponent(jTextField_Status, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(78, 78, 78)
-                                        .addComponent(jLabel11)
-                                        .addGap(187, 187, 187)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jFormattedTextField_Cpf_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jButton_Budcar)))
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -282,14 +271,8 @@ public class Teste extends javax.swing.JFrame {
                                 .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42)
+                                .addGap(27, 27, 27)
                                 .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 838, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jToggleButton1)
-                                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -298,8 +281,57 @@ public class Teste extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(24, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jToggleButton1)
+                                .addGap(27, 27, 27)
+                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel5)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(12, 12, 12)
+                                                    .addComponent(jLabel6)
+                                                    .addGap(64, 64, 64))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(18, 18, 18)))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jTextField_Status, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel8)
+                                                    .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(78, 78, 78)
+                                            .addComponent(jLabel11)
+                                            .addGap(187, 187, 187)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jFormattedTextField_Cpf_Cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addComponent(jButton_Budcar)))
+                                            .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,13 +383,12 @@ public class Teste extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jToggleButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jToggleButton1)
+                    .addComponent(jToggleButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton_Novo)
                     .addComponent(jToggleButton4)
@@ -368,6 +399,7 @@ public class Teste extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField_id_pastaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_id_pastaActionPerformed
@@ -380,15 +412,9 @@ public class Teste extends javax.swing.JFrame {
 
     // AÇÃO DO BOTÃO BUSCAR
     private void jButton_BudcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_BudcarActionPerformed
-        preencheTabela("select id_pasta,cpf_assistido,titulo_pasta,data_inicio from pastas where cpf_assistido like'%"+jFormattedTextField_Cpf_Cliente.getText()+"%'");
+        preencheTabelaClientes("select id_pasta,cpf_assistido,titulo_pasta,data_inicio from pastas where cpf_assistido like'%"+jFormattedTextField_Cpf_Cliente.getText()+"%'");
         jTable_Processos.setVisible(true);
-        mod.setPesquisa(jFormattedTextField_Cpf_Cliente.getText());
-        BeansPasta model = dao.busca_pasta(mod);
-        jTextField_id_pasta.setText(String.valueOf(model.getId_Pasta()));
-        jDateChooser1.setDate(mod.getData_Inicio());
-        jDateChooser2.setDate(mod.getData_Fim());
-        jTextField_Titulo.setText(mod.getTitulo_Pasta());
-        jTextField_Status.setText(mod.getStatus());
+        jTable_Processos.setEnabled(true);
     }//GEN-LAST:event_jButton_BudcarActionPerformed
 
     private void jTextField_TituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_TituloActionPerformed
@@ -435,7 +461,7 @@ public class Teste extends javax.swing.JFrame {
     }
         
     //  METÓDO PARA PREENCHER A TABELA CLIENTES
-    public void preencheTabela(String sql) {
+    public void preencheTabelaClientes(String sql) {
         ArrayList dados = new ArrayList();
         String[] colunas = new String[]{"Nº da Pasta", "CPF", "Titulo" ,"Data_Inicio"};
         conex.getConnection();
@@ -456,12 +482,80 @@ public class Teste extends javax.swing.JFrame {
         jTable_Processos.getColumnModel().getColumn(1).setResizable(false);
         jTable_Processos.getColumnModel().getColumn(2).setPreferredWidth(250);
         jTable_Processos.getColumnModel().getColumn(2).setResizable(false);
+        jTable_Processos.getColumnModel().getColumn(3).setPreferredWidth(122);
+        jTable_Processos.getColumnModel().getColumn(3).setResizable(false);
         jTable_Processos.getTableHeader().setReorderingAllowed(false);
         jTable_Processos.setAutoResizeMode(jTable_Processos.AUTO_RESIZE_OFF);
         jTable_Processos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         conex.desconectar();
     }//GEN-LAST:event_jToggleButton_SalvarActionPerformed
 
+        //  METÓDO PARA PREENCHER A TABELA ALUNOS
+    public void preencheTabelaAlunos(String sql) {
+        ArrayList dados = new ArrayList();
+        String[] colunas = new String[]{"Nome do Aluno", "CPF do aluno", "Telefone"};
+        conex.getConnection();
+        conex.executasql(sql);
+        try {
+            conex.rs.first();
+            do {
+                dados.add(new Object[]{conex.rs.getInt("nome_aluno"), conex.rs.getString("cpf_assistido"), conex.rs.getString("titulo_pasta"), conex.rs.getString("data_inicio")});
+            } while (conex.rs.next());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Busque por outro assistido para preencher a tabela");
+        }
+        ModeloTabela modelo = new ModeloTabela(dados, colunas);
+        jTable_Processos.setModel(modelo);
+        jTable_Processos.getColumnModel().getColumn(0).setPreferredWidth(92);
+        jTable_Processos.getColumnModel().getColumn(0).setResizable(false);
+        jTable_Processos.getColumnModel().getColumn(1).setPreferredWidth(440);
+        jTable_Processos.getColumnModel().getColumn(1).setResizable(false);
+        jTable_Processos.getColumnModel().getColumn(2).setPreferredWidth(250);
+        jTable_Processos.getColumnModel().getColumn(2).setResizable(false);
+        jTable_Processos.getColumnModel().getColumn(3).setPreferredWidth(122);
+        jTable_Processos.getColumnModel().getColumn(3).setResizable(false);
+        jTable_Processos.getTableHeader().setReorderingAllowed(false);
+        jTable_Processos.setAutoResizeMode(jTable_Processos.AUTO_RESIZE_OFF);
+        jTable_Processos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        conex.desconectar();
+    }   
+    
+    // AÇÃO DO CLIQUE DO MOUSE
+    private void jTable_ProcessosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_ProcessosMouseClicked
+        String id_pasta =""+jTable_Processos.getValueAt(jTable_Processos.getSelectedRow(), 0);
+        conex.getConnection();
+        conex.executasql("select *from pastas where id_pasta='"+id_pasta+"'");
+        try {
+            conex.rs.first();
+            jFormattedTextField_Cpf_Cliente.setText(conex.rs.getString("cpf_assistido"));
+            jTextField_Titulo.setText(conex.rs.getString("titulo_pasta"));
+            jDateChooser1.setDate(conex.rs.getDate("data_inicio"));
+            jDateChooser2.setDate(conex.rs.getDate("data_fim"));
+            jTextField_id_pasta.setText(String.valueOf(conex.rs.getInt("id_pasta")));
+            jTextField_Status.setText(conex.rs.getString("status"));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao selecionar os dados "+ex);
+        }
+        conex.desconectar();
+    }//GEN-LAST:event_jTable_ProcessosMouseClicked
+
+    /*
+    // METÓDO PARA BUSCAR O PROFESSOR NO BANCO DE DADOS
+    public void preencherProfessor(){
+        conex.getConnection();
+        conex.executasql("select *from professores order by nome_professor"); 
+        try {
+            conex.rs.first();
+            jComboBox_.removeAllItems();
+            do{
+                jComboBox_Professor.addItem(conex.rs.getString("nome_professor"));
+            }while(conex.rs.next());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Erro ao preencher o professor "+ex);
+        }
+        conex.desconectar();
+    }*/
+    
     /**
      * @param args the command line arguments
      */
@@ -520,7 +614,7 @@ public class Teste extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable_Alunos;
     private javax.swing.JTable jTable_Processos;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
