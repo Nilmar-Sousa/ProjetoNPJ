@@ -70,7 +70,7 @@ public class Teste extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable_Alunos = new javax.swing.JTable();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton_Adicionar = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton_Novo = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
@@ -80,6 +80,8 @@ public class Teste extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
         jFormattedTextField_Cpf_Cliente = new javax.swing.JFormattedTextField();
+        jButton_Buscar_aluno = new javax.swing.JButton();
+        jFormattedTextField_pesquisar_aluno = new javax.swing.JFormattedTextField();
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -185,22 +187,22 @@ public class Teste extends javax.swing.JFrame {
 
         jTable_Alunos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Nome do(a) Aluno(a)", "RA (Registro Acadêmico)", "CPF", "Disciplina"
+
             }
         ));
         jScrollPane3.setViewportView(jTable_Alunos);
 
-        jToggleButton1.setText("Adicionar");
-        jToggleButton1.setEnabled(false);
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        jToggleButton_Adicionar.setText("Adicionar");
+        jToggleButton_Adicionar.setEnabled(false);
+        jToggleButton_Adicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                jToggleButton_AdicionarActionPerformed(evt);
             }
         });
 
@@ -237,6 +239,19 @@ public class Teste extends javax.swing.JFrame {
 
         try {
             jFormattedTextField_Cpf_Cliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jButton_Buscar_aluno.setText("Buscar Aluno");
+        jButton_Buscar_aluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Buscar_alunoActionPerformed(evt);
+            }
+        });
+
+        try {
+            jFormattedTextField_pesquisar_aluno.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -287,9 +302,13 @@ public class Teste extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jToggleButton1)
+                                .addComponent(jToggleButton_Adicionar)
                                 .addGap(27, 27, 27)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(jFormattedTextField_pesquisar_aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton_Buscar_aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -386,9 +405,11 @@ public class Teste extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                    .addComponent(jToggleButton_Adicionar)
+                    .addComponent(jToggleButton2)
+                    .addComponent(jButton_Buscar_aluno)
+                    .addComponent(jFormattedTextField_pesquisar_aluno))
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton_Novo)
                     .addComponent(jToggleButton4)
@@ -421,13 +442,14 @@ public class Teste extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_TituloActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void jToggleButton_AdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton_AdicionarActionPerformed
+
+        
+    }//GEN-LAST:event_jToggleButton_AdicionarActionPerformed
 
     // AÇÃO DO BOTÃO NOVO
     private void jToggleButton_NovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton_NovoActionPerformed
-        flag = 1;
+
     }//GEN-LAST:event_jToggleButton_NovoActionPerformed
 
     // AÇÃO DO BOTÃO SALVAR
@@ -490,7 +512,7 @@ public class Teste extends javax.swing.JFrame {
         conex.desconectar();
     }//GEN-LAST:event_jToggleButton_SalvarActionPerformed
 
-        //  METÓDO PARA PREENCHER A TABELA ALUNOS
+    //  METÓDO PARA PREENCHER A TABELA ALUNOS
     public void preencheTabelaAlunos(String sql) {
         ArrayList dados = new ArrayList();
         String[] colunas = new String[]{"Nome do Aluno", "CPF do aluno", "Telefone"};
@@ -499,23 +521,21 @@ public class Teste extends javax.swing.JFrame {
         try {
             conex.rs.first();
             do {
-                dados.add(new Object[]{conex.rs.getInt("nome_aluno"), conex.rs.getString("cpf_assistido"), conex.rs.getString("titulo_pasta"), conex.rs.getString("data_inicio")});
+                dados.add(new Object[]{conex.rs.getString("nome_aluno"), conex.rs.getString("cpf_aluno"), conex.rs.getString("telefone_aluno")});
             } while (conex.rs.next());
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(rootPane, "Busque por outro assistido para preencher a tabela");
+            JOptionPane.showMessageDialog(rootPane, "Busque por outro aluno para preencher a tabela");
         }
-        ModeloTabela modelo = new ModeloTabela(dados, colunas);
-        jTable_Processos.setModel(modelo);
+        ModeloTabela modelo1 = new ModeloTabela(dados, colunas);
+        jTable_Processos.setModel(modelo1);
         jTable_Processos.getColumnModel().getColumn(0).setPreferredWidth(92);
         jTable_Processos.getColumnModel().getColumn(0).setResizable(false);
         jTable_Processos.getColumnModel().getColumn(1).setPreferredWidth(440);
         jTable_Processos.getColumnModel().getColumn(1).setResizable(false);
         jTable_Processos.getColumnModel().getColumn(2).setPreferredWidth(250);
         jTable_Processos.getColumnModel().getColumn(2).setResizable(false);
-        jTable_Processos.getColumnModel().getColumn(3).setPreferredWidth(122);
-        jTable_Processos.getColumnModel().getColumn(3).setResizable(false);
         jTable_Processos.getTableHeader().setReorderingAllowed(false);
-        jTable_Processos.setAutoResizeMode(jTable_Processos.AUTO_RESIZE_OFF);
+        jTable_Processos.setAutoResizeMode(jTable_Alunos.AUTO_RESIZE_OFF);
         jTable_Processos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         conex.desconectar();
     }   
@@ -538,6 +558,14 @@ public class Teste extends javax.swing.JFrame {
         }
         conex.desconectar();
     }//GEN-LAST:event_jTable_ProcessosMouseClicked
+
+    
+    // BUSCAR ALUNO
+    private void jButton_Buscar_alunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Buscar_alunoActionPerformed
+        preencheTabelaAlunos("select nome_aluno,cpf_aluno,telefone_aluno from alunos where cpf_aluno like'%"+jFormattedTextField_pesquisar_aluno.getText()+"%'");
+        jTable_Alunos.setVisible(true);
+        jTable_Alunos.setEnabled(true);
+    }//GEN-LAST:event_jButton_Buscar_alunoActionPerformed
 
     /*
     // METÓDO PARA BUSCAR O PROFESSOR NO BANCO DE DADOS
@@ -593,10 +621,12 @@ public class Teste extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Budcar;
+    private javax.swing.JButton jButton_Buscar_aluno;
     private javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JFormattedTextField jFormattedTextField_Cpf_Cliente;
+    private javax.swing.JFormattedTextField jFormattedTextField_pesquisar_aluno;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -624,11 +654,11 @@ public class Teste extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_Status;
     private javax.swing.JTextField jTextField_Titulo;
     private javax.swing.JTextField jTextField_id_pasta;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton6;
     private javax.swing.JToggleButton jToggleButton7;
+    private javax.swing.JToggleButton jToggleButton_Adicionar;
     private javax.swing.JToggleButton jToggleButton_Novo;
     private javax.swing.JToggleButton jToggleButton_Salvar;
     // End of variables declaration//GEN-END:variables

@@ -18,6 +18,15 @@ public class BeansPasta {
     private String professor_responsavel;
     private String telefone_Professor;
     private String pesquisa;
+    private BeansAlunos aluno;
+
+    public BeansAlunos getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(BeansAlunos aluno) {
+        this.aluno = aluno;
+    }
 
     public String getPesquisa() {
         return pesquisa;
