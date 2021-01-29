@@ -30,6 +30,7 @@ public class Teste extends javax.swing.JFrame {
      */
     public Teste() {
         initComponents();
+        preencherProfessor();
     }
 
     /**
@@ -62,7 +63,7 @@ public class Teste extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jTextField_Status = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox_professor = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -173,7 +174,7 @@ public class Teste extends javax.swing.JFrame {
 
         jLabel9.setText("Professor Responsável");
 
-        jComboBox1.setEnabled(false);
+        jComboBox_professor.setEnabled(false);
 
         jLabel10.setText("Telefone");
 
@@ -289,7 +290,7 @@ public class Teste extends javax.swing.JFrame {
                                 .addGap(27, 27, 27)
                                 .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBox_professor, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
@@ -395,7 +396,7 @@ public class Teste extends javax.swing.JFrame {
                     .addComponent(jTextField_Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox_professor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -404,11 +405,12 @@ public class Teste extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton_Adicionar)
-                    .addComponent(jToggleButton2)
-                    .addComponent(jButton_Buscar_aluno)
-                    .addComponent(jFormattedTextField_pesquisar_aluno))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jFormattedTextField_pesquisar_aluno, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jToggleButton_Adicionar)
+                        .addComponent(jToggleButton2)
+                        .addComponent(jButton_Buscar_aluno)))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton_Novo)
@@ -512,7 +514,7 @@ public class Teste extends javax.swing.JFrame {
         conex.desconectar();
     }//GEN-LAST:event_jToggleButton_SalvarActionPerformed
 
-    //  METÓDO PARA PREENCHER A TABELA ALUNOS
+    // METÓDO PARA PREENCHER A TABELA ALUNOS
     public void preencheTabelaAlunos(String sql) {
         ArrayList dados = new ArrayList();
         String[] colunas = new String[]{"Nome do Aluno", "CPF do aluno", "Telefone"};
@@ -526,17 +528,17 @@ public class Teste extends javax.swing.JFrame {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Busque por outro aluno para preencher a tabela");
         }
-        ModeloTabela modelo1 = new ModeloTabela(dados, colunas);
-        jTable_Processos.setModel(modelo1);
-        jTable_Processos.getColumnModel().getColumn(0).setPreferredWidth(92);
-        jTable_Processos.getColumnModel().getColumn(0).setResizable(false);
-        jTable_Processos.getColumnModel().getColumn(1).setPreferredWidth(440);
-        jTable_Processos.getColumnModel().getColumn(1).setResizable(false);
-        jTable_Processos.getColumnModel().getColumn(2).setPreferredWidth(250);
-        jTable_Processos.getColumnModel().getColumn(2).setResizable(false);
-        jTable_Processos.getTableHeader().setReorderingAllowed(false);
-        jTable_Processos.setAutoResizeMode(jTable_Alunos.AUTO_RESIZE_OFF);
-        jTable_Processos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        ModeloTabela modelo = new ModeloTabela(dados, colunas);
+        jTable_Alunos.setModel(modelo);
+        jTable_Alunos.getColumnModel().getColumn(0).setPreferredWidth(92);
+        jTable_Alunos.getColumnModel().getColumn(0).setResizable(false);
+        jTable_Alunos.getColumnModel().getColumn(1).setPreferredWidth(440);
+        jTable_Alunos.getColumnModel().getColumn(1).setResizable(false);
+        jTable_Alunos.getColumnModel().getColumn(2).setPreferredWidth(250);
+        jTable_Alunos.getColumnModel().getColumn(2).setResizable(false);
+        jTable_Alunos.getTableHeader().setReorderingAllowed(false);
+        jTable_Alunos.setAutoResizeMode(jTable_Alunos.AUTO_RESIZE_OFF);
+        jTable_Alunos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         conex.desconectar();
     }   
     
@@ -567,22 +569,22 @@ public class Teste extends javax.swing.JFrame {
         jTable_Alunos.setEnabled(true);
     }//GEN-LAST:event_jButton_Buscar_alunoActionPerformed
 
-    /*
+    
     // METÓDO PARA BUSCAR O PROFESSOR NO BANCO DE DADOS
     public void preencherProfessor(){
         conex.getConnection();
         conex.executasql("select *from professores order by nome_professor"); 
         try {
             conex.rs.first();
-            jComboBox_.removeAllItems();
+            jComboBox_professor.removeAllItems();
             do{
-                jComboBox_Professor.addItem(conex.rs.getString("nome_professor"));
+                jComboBox_professor.addItem(conex.rs.getString("nome_professor"));
             }while(conex.rs.next());
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(rootPane, "Erro ao preencher o professor "+ex);
         }
         conex.desconectar();
-    }*/
+    }
     
     /**
      * @param args the command line arguments
@@ -622,7 +624,7 @@ public class Teste extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Budcar;
     private javax.swing.JButton jButton_Buscar_aluno;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox_professor;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JFormattedTextField jFormattedTextField_Cpf_Cliente;
