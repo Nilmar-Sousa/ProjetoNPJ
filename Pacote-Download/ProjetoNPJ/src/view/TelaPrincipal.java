@@ -3,7 +3,6 @@ package view;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import modeloConection.ConexaoBD;
-import static modeloConection.ConexaoBD.con;
 
 /**
  *

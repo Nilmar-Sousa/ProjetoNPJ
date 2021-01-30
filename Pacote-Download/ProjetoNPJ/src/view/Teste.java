@@ -9,9 +9,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
+import modelBeans.BeansAlunos;
 import modelBeans.BeansPasta;
 import modelBeans.ModeloTabela;
 import modeloConection.ConexaoBD;
+import modeloDao.DAOAluno;
 import modeloDao.DAOPasta;
 
 /**
@@ -21,8 +23,10 @@ import modeloDao.DAOPasta;
 public class Teste extends javax.swing.JFrame {
 
     BeansPasta mod = new BeansPasta();
+    BeansAlunos modAluno = new BeansAlunos();
     ConexaoBD conex = new ConexaoBD();
     DAOPasta dao = new DAOPasta();
+    DAOAluno daoAluno = new DAOAluno();
     int flag = 0;
 
     /**
@@ -83,6 +87,7 @@ public class Teste extends javax.swing.JFrame {
         jFormattedTextField_Cpf_Cliente = new javax.swing.JFormattedTextField();
         jButton_Buscar_aluno = new javax.swing.JButton();
         jFormattedTextField_pesquisar_aluno = new javax.swing.JFormattedTextField();
+        jComboBox_nome_aluno = new javax.swing.JComboBox<>();
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -256,6 +261,11 @@ public class Teste extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextField_pesquisar_aluno.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jFormattedTextField_pesquisar_alunoFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -309,7 +319,9 @@ public class Teste extends javax.swing.JFrame {
                                 .addGap(38, 38, 38)
                                 .addComponent(jFormattedTextField_pesquisar_aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton_Buscar_aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton_Buscar_aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBox_nome_aluno, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -410,7 +422,8 @@ public class Teste extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jToggleButton_Adicionar)
                         .addComponent(jToggleButton2)
-                        .addComponent(jButton_Buscar_aluno)))
+                        .addComponent(jButton_Buscar_aluno)
+                        .addComponent(jComboBox_nome_aluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton_Novo)
@@ -569,6 +582,12 @@ public class Teste extends javax.swing.JFrame {
         jTable_Alunos.setEnabled(true);
     }//GEN-LAST:event_jButton_Buscar_alunoActionPerformed
 
+    // AÇÃO DE PESQUISAR AO PERDER O FOCO
+    private void jFormattedTextField_pesquisar_alunoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jFormattedTextField_pesquisar_alunoFocusLost
+     //   modAluno = daoAluno.((jFormattedTextField_pesquisar_aluno.getText()));
+     //   jComboBox_nome_aluno.setSelectedItem(mod.get);
+    }//GEN-LAST:event_jFormattedTextField_pesquisar_alunoFocusLost
+
     
     // METÓDO PARA BUSCAR O PROFESSOR NO BANCO DE DADOS
     public void preencherProfessor(){
@@ -624,6 +643,7 @@ public class Teste extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Budcar;
     private javax.swing.JButton jButton_Buscar_aluno;
+    private javax.swing.JComboBox<String> jComboBox_nome_aluno;
     private javax.swing.JComboBox<String> jComboBox_professor;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;

@@ -89,4 +89,25 @@ public class DAOAluno {
         }
         conexProfessor.desconectar();
     }
+    
+        // METÓDO PARA BUSCAR DADOS NO BANCO DE DADOS
+    public BeansAlunos busca_pasta(BeansAlunos mod) {
+        conex.getConnection();
+        conex.executasql("select *from pastas where cpf_assistido like'%" + mod.getCpf_Aluno()+ "%'");
+        try {
+            conex.rs.first();
+            mod.setId_Aluno(conex.rs.getInt("id_pasta"));
+            mod.setCpf_Aluno(conex.rs.getString("cpf_aluno"));
+            mod.setTelefone_Aluno(conex.rs.getString("telefone_aluno"));
+            mod.setEndereco_Aluno(conex.rs.getString("endereco_aluno"));
+            mod.setBairro_Aluno(conex.rs.getString("bairro_aluno"));
+            mod.setEstado_Aluno(conex.rs.getString("estado_aluno"));
+            mod.setCidade_Aluno(conex.rs.getString("cidade_aluno"));
+           
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Assistido não cadastrado ");
+        }
+        conex.desconectar();
+        return mod;
+    }
 }
